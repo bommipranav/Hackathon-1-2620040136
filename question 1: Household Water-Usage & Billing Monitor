@@ -1,4 +1,4 @@
-//code for question 1: Household Water-Usage & Billing Monitor
+//code for question 1a: Household Water-Usage & Billing Monitor (Data Types)
 
 
 import java.util.Scanner;
