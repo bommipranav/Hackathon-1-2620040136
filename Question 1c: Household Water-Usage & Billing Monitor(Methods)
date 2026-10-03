@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class WaterBillingC {
+
+    
+    public static int calculateTotal(int mor, int eve) {
+        return mor + eve;
+    }
+
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter morning water usage (in litres): ");
+        int mor = sc.nextInt();
+
+        System.out.print("Enter evening water usage (in litres): ");
+        int eve = sc.nextInt();
+
+        
+        int tot = calculateTotal(mor, eve);
+
+    
+        System.out.println("Total Water Consumption: " + tot + " litres");
+
+        sc.close();
+    }
+}
