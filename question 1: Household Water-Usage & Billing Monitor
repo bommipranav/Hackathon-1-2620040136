@@ -1,0 +1,31 @@
+//code for question 1: Household Water-Usage & Billing Monitor
+
+
+import java.util.Scanner;
+
+public class WaterBilling {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Enter Number of family members: ");
+        int fam = sc.nextInt();
+
+        System.out.print("Enter Water consumed in litres: ");
+        double wat = sc.nextDouble();
+
+        System.out.print("Enter House number: "); 
+        int house = sc.nextInt();
+
+        System.out.print("Enter Water usage status: ");
+        char Stat = sc.next().charAt(0);
+
+        System.out.println("\n Household Details");
+        System.out.println("Family Members: " + fam);
+        System.out.println("Water Consumed: " + wat + " litres");
+        System.out.println("House Number: " + house);
+        System.out.println("Water Usage Status: " + Stat);
+
+        sc.close();
+    }
+}
