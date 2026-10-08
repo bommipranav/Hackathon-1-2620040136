@@ -1,0 +1,92 @@
+
+import java.util.Scanner;
+
+public class Student {
+  
+    String studentName;
+    int roll;
+    double marks;
+    String course;
+    int credits;
+
+    
+    public Student(String studentName, int roll, double marks, String course, int credits) {
+        this.studentName = studentName;
+        this.roll = roll;
+        this.marks = marks;
+        this.course = course;
+        this.credits = credits;
+    }
+
+    
+    public boolean checkEligibility() {
+        return this.marks >= 50;
+    }
+
+    
+    public double calculateFee() {
+        return this.credits * 1500.0;
+    }
+
+    public double calculateScholarship() {
+        double fee = calculateFee();
+        if (this.marks >= 85) {
+            return fee * 0.20; 
+        } else if (this.marks >= 70 && this.marks <= 84) {
+            return fee * 0.10; 
+            return 0.0; 
+        }
+    }
+
+    
+    public double calculateFinalFee() {
+        return calculateFee() - calculateScholarship();
+    }
+
+    
+    public void displayDetails() {
+        System.out.println("\n--- Student Details ---");
+        System.out.println("Student Name: " + studentName);
+        System.out.println("Roll Number: " + roll);
+        System.out.println("Marks: " + marks);
+        System.out.println("Course Name: " + course);
+        System.out.println("Course Credits: " + credits);
+        System.out.println("Eligibility Status: Eligible");
+        System.out.println("Total Course Fee: Rs. " + calculateFee());
+        System.out.println("Scholarship Amount: Rs. " + calculateScholarship());
+        System.out.println("Final Fee to Pay: Rs. " + calculateFinalFee());
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter Student Name: ");
+        String studentName = scanner.nextLine();
+
+        System.out.print("Enter Roll Number: ");
+        int roll = scanner.nextInt();
+
+        System.out.print("Enter Marks: ");
+        double marks = scanner.nextDouble();
+        scanner.nextLine(); 
+
+        System.out.print("Enter Course Name: ");
+        String course = scanner.nextLine();
+
+        System.out.print("Enter Course Credits: ");
+        int credits = scanner.nextInt();
+
+        
+        Student student = new Student(studentName, roll, marks, course, credits);
+
+      
+        if (student.checkEligibility()) {
+            student.displayDetails();
+        } else {
+            System.out.println("\nStudent is NOT eligible for course registration (Marks are below 50).");
+        }
+
+        scanner.close();
+    }
+}
